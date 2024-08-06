@@ -1,0 +1,11 @@
+  <label for="firstDate">Select a date:</label>
+  <input type="text"
+  id="firstDate"
+  class="form-control"
+  bsDatepicker
+  [bsConfig]="bsConfig"
+  [minDate]="minDate"
+  [maxDate]="maxDate"
+  [(ngModel)]="selectedDate1"
+  (bsValueChange)="onDateChange($event)">
+

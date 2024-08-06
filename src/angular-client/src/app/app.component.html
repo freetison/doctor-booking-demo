@@ -1,0 +1,24 @@
+<h1>Calendar</h1>
+<div class="container mt-6 parent-container">
+  <div class="row">
+    <div class="col-md-4 date-picker-column">
+      <app-date-picker class="date-picker" (selectedDate)="onDateSelected($event)"></app-date-picker>
+    </div>
+    <div class="col-md-4 schedule-column">
+      <app-schedule-calendar *ngIf="isVisibleSchedule" (selectedSlot)="onSlotSelected($event)" [schedule]="schedule"></app-schedule-calendar>
+      <div *ngIf="!isVisibleSchedule" >
+        <p>Select a date to view the schedule.</p>
+      </div>
+    </div>
+    <div class="col-md-4 selected-slot-column">
+      <div *ngIf="selectedSlot" class="selected-slot">
+        <h3>Selected Slot</h3>
+        <p>{{ selectedSlot.start | date:'fullDate' }}: {{ selectedSlot.start | date:'shortTime' }} - {{ selectedSlot.end | date:'shortTime' }}</p>
+      </div>
+      <div *ngIf="!selectedSlot" >
+        <h3>Selected Slot</h3>
+        <p>No slot selected.</p>
+      </div>
+    </div>
+  </div>
+</div>

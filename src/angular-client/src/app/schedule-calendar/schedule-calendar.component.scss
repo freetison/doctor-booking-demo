@@ -1,0 +1,51 @@
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  cursor: default;
+  background-color: azure;
+
+}
+
+.schedule-content {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.day-schedule {
+  margin-bottom: 20px;
+}
+
+.slots-list {
+  display: flex;
+  flex-direction: column;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.slot-button {
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px 0;
+  background: #f0f0f0;
+  border: none;
+  width: 100%;
+  text-align: left;
+  transition: background 0.3s ease;
+}
+
+.slot-button:hover {
+  background: #d0d0d0;
+}
+
+.slot-button.selected {
+  background: #b0c4de;
+}
+

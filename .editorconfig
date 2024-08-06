@@ -1,0 +1,23 @@
+# .editorconfig file
+
+# Define the configuration standard
+root = true
+
+# Apply to all C# files
+[*.cs]
+
+# Define code style rules for C#
+# Use uppercase and underscores for constants
+dotnet_style_constant_fields = true:suggestion
+
+# Use these naming style rules for constants
+dotnet_naming_rule.constant_fields_should_be_uppercase_with_underscore.severity = suggestion
+dotnet_naming_rule.constant_fields_should_be_uppercase_with_underscore.symbols = constant_fields
+dotnet_naming_rule.constant_fields_should_be_uppercase_with_underscore.style = uppercase_with_underscore
+
+dotnet_naming_symbols.constant_fields.applicable_kinds = field
+dotnet_naming_symbols.constant_fields.applicable_accessibilities = *
+dotnet_naming_symbols.constant_fields.required_modifiers = const
+
+dotnet_naming_style.uppercase_with_underscore.capitalization = all_upper
+dotnet_naming_style.uppercase_with_underscore.word_separator = _

@@ -1,0 +1,31 @@
+services:
+  api:
+    image: api
+    build:
+      context: src/Api
+      dockerfile: Dockerfile
+    environment:
+      - ApiSettings__ApiTitle=doctor-booking-demo Api
+      - ApiSettings__ApiVersion=v1
+      - ApiSettings__ExternalApi__BaseUrl=https://draliatest.azurewebsites.net
+      # Only in demo mode.. this is not a good practice.
+      - ApiSettings__ExternalApi__Credentials__User=techuser
+      - ApiSettings__ExternalApi__Credentials__PassWord=secretpassWord
+    ports:
+      - "5000:8080"
+    networks:
+      - doctor-booking-network
+
+  angular-client:
+    image: angular-client
+    build:
+      context: src/angular-client
+      dockerfile: Dockerfile
+    ports:
+      - "4201:4201"
+    networks:
+      - doctor-booking-network
+
+networks:
+  doctor-booking-network:
+    driver: bridge

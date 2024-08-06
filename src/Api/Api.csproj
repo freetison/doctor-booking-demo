@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <UserSecretsId>e30b241c-7053-4eb7-9a45-8dcaf3171ed1</UserSecretsId>
+    <DockerfileContext>..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FastEndpoints" Version="5.26.0" />
+    <PackageReference Include="FastEndpoints.AspVersioning" Version="5.26.0" />
+    <PackageReference Include="FastEndpoints.Swagger" Version="5.26.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.20.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Newtonsoft.Json.Schema" Version="4.0.1" />
+    <PackageReference Include="NSwag.AspNetCore" Version="14.0.8" />
+    <PackageReference Include="Polly" Version="8.4.0" />
+    <PackageReference Include="RestSharp" Version="111.3.0" />
+    <PackageReference Include="Tx.Core.Extensions.String" Version="2.1.2024.25" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="DependencyInjection\ConfigureSourceProviderServices.cs" />
+    <Compile Remove="Endpoints\Availability\Utils\WeeklyAvailabilityConverter.cs" />
+    <Compile Remove="Endpoints\Availability\Utils\IJsonDeserializer.cs" />
+    <Compile Remove="Endpoints\Availability\Utils\JsonDeserializer.cs" />
+    <Compile Remove="Endpoints\Availability\Utils\FreeSlotCalculator.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="appsettings.json" />
+  </ItemGroup>
+
+</Project>

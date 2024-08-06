@@ -1,0 +1,15 @@
+<div class="calendar-container">
+  <div *ngIf="schedule" class="schedule-content">
+    <h2>{{ schedule.facility.name }}</h2>
+    <p>{{ schedule.facility.address }}</p>
+
+    <div *ngFor="let day of schedule.freeSlots" class="day-schedule">
+      <h3>{{ day.day }}</h3>
+      <div class="slots-list">
+        <button *ngFor="let slot of day.freeSlots" (click)="onDateSelect(day.day, slot)" class="slot-button">
+          {{ slot.start | date:'shortTime' }} - {{ slot.end | date:'shortTime' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
